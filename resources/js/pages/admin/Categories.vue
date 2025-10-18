@@ -1,7 +1,9 @@
 <template>
-  <div class="admin-layout">
-    <AdminSidebar />
+ 
+  <div >
+    
     <div class="content">
+      <AdminSidebar />
       <h2>Categories</h2>
       <ul>
         <li>Technology</li>
@@ -13,5 +15,5 @@
 </template>
 
 <script setup>
-import AdminSidebar from '../../components/AdminSidebar.vue';
+import AdminSidebar from '../components/AdminSidebar.vue';
 </script>

@@ -1,14 +1,35 @@
 <template>
   <div class="auth-form">
     <h2>Login</h2>
-    <form>
-      <input type="email" placeholder="Email" />
-      <input type="password" placeholder="Password" />
-      <button>Login</button>
+    <form @submit.prevent="login">
+      <input v-model="email" type="email" placeholder="Email" required />
+      <input v-model="password" type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
     </form>
-    <router-link to="/register">Don’t have an account? Register</router-link>
+    <router-link to="/forgot-password">Forgot Password?</router-link>
   </div>
 </template>
+
+<script setup>
+import axios from '../../api';
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const email = ref('');
+const password = ref('');
+
+const login = async () => {
+  try {
+    const res = await axios.post('/login', { email: email.value, password: password.value });
+    localStorage.setItem('token', res.data.token);
+    router.push('/');
+  } catch (e) {
+    alert('Invalid credentials');
+  }
+};
+</script>
+
 
 <style scoped>
 .auth-form {

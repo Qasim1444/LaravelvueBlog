@@ -12,5 +12,5 @@
 </template>
 
 <script setup>
-import AdminSidebar from '../../components/AdminSidebar.vue';
+import AdminSidebar from '../components/AdminSidebar.vue';
 </script>
