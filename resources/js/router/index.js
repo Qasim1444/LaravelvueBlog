@@ -12,6 +12,12 @@ import Dashboard from '../pages/admin/Dashboard.vue';
 import Posts from '../pages/admin/Posts.vue';
 import Categories from '../pages/admin/Categories.vue';
 import Users from '../pages/admin/Users.vue';
+import ForgotPassword from '../pages/auth/ForgotPassword.vue';
+import ResetPassword from '../pages/auth/ResetPassword.vue';
+
+
+
+
 const routes = [
  { path: '/', component: Home },
   { path: '/blogs', component: BlogList },
@@ -22,7 +28,8 @@ const routes = [
   // Auth
   { path: '/login', component: Login },
   { path: '/register', component: Register },
-
+  { path: '/forgot-password', component: ForgotPassword },
+  { path: '/reset-password', component: ResetPassword },
   // Admin
   { path: '/admin', component: Dashboard },
   { path: '/admin/posts', component: Posts },
